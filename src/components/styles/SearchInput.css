@@ -1,0 +1,19 @@
+input {
+    border-radius: 6px;
+    background-color: #d5d5d5;
+    border: none;
+    text-align: center;
+    width: fit-content;
+    padding: 10px;
+    font-size: 16px;
+}
+
+input::placeholder {
+    text-align: center;
+    color: #070707;
+    font-weight: bold;
+  }
+
+  input:focus::placeholder {
+    opacity: 0;
+  }
