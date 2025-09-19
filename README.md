@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # fulll-test
 Exercice Frontend Fulll
 =======
