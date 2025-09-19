@@ -4,7 +4,6 @@ export interface GithubUserItem {
   login: string;
   avatar_url: string;
   html_url: string;
-  // ajoute d'autres champs si besoin
 }
 
 export interface UsersState {

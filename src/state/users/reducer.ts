@@ -34,15 +34,12 @@ export const usersReducer = (state: UsersState, action: UsersAction): UsersState
 
       state.users.forEach((u, index) => {
         if (state.selectedIds.has(u.id)) {
-          // Récupérer le "baseName" en retirant les éventuels (n)
           const baseLogin = u.login.replace(/\s\(\d+\)$/, "");
 
-          // Trouver tous les doublons déjà présents
           const existingCopies = state.users.filter((x) =>
             x.login.startsWith(baseLogin)
           );
 
-          // Déterminer le prochain numéro
           let copyNumber = 1;
           let newLogin = `${baseLogin} (${copyNumber})`;
 
@@ -51,14 +48,12 @@ export const usersReducer = (state: UsersState, action: UsersAction): UsersState
             newLogin = `${baseLogin} (${copyNumber})`;
           }
 
-          // Créer un nouvel utilisateur dupliqué
           const duplicated = {
             ...u,
-            id: Date.now() + Math.floor(Math.random() * 1000), // id unique
+            id: Date.now() + Math.floor(Math.random() * 1000), 
             login: newLogin,
           };
 
-          // Insérer juste après l’original
           newUsers.splice(index + 1, 0, duplicated);
         }
       });
